@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <p myHighlight>Este texto está resaltado.</p>
+<!-- Esta es una directiva de atributo en html -->
+</ion-content>
+
+<ion-tabs>
+  <!-- Tab bar -->
+  <ion-tab-bar slot="bottom">
+    
+    <ion-tab-button tab="schedule">
+      <ion-icon name="calendar" aria-hidden="true"></ion-icon>
+      <ion-label [routerLink]="['/perro']">Perro</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="speakers">
+      <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
+      <ion-label [routerLink]="['/armadura']">Armadura</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map">
+      <ion-icon name="map" aria-hidden="true"></ion-icon>
+      <ion-label [routerLink]="['/pizarron']">Pizarrón</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about">
+      <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
+      <ion-label [routerLink]="['/piedra']">Piedra</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about">
+      <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
+      <ion-label [routerLink]="['/computadora']">Computadora</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
