@@ -11,8 +11,18 @@
     </ion-toolbar>
   </ion-header>
   <p myHighlight>Este texto está resaltado.</p>
+  <table>
+    <tr *ngFor="let elemento of [1,2,3,4,5]">
+      <td [ngStyle]="{'background-color':elemento%2==0?'red':'yellow'}">{{elemento}}</td>
+    </tr>
+  </table>
 <!-- Esta es una directiva de atributo en html -->
+<div *ngIf="condicion; else bloqueElse">El contenido de este div se muestra cuando 'condicion' se cumple.</div>
+<ng-template #bloqueElse>Este contenido se muestra cuando 'condicion' es false.</ng-template>
+<!-- Esta es una directiva de estructura -->
 </ion-content>
+
+
 
 <ion-tabs>
   <!-- Tab bar -->
@@ -33,7 +43,7 @@
       <ion-label [routerLink]="['/pizarron']">Pizarrón</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="about">
+    <ion-tab-button class="about">
       <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
       <ion-label [routerLink]="['/piedra']">Piedra</ion-label>
     </ion-tab-button>
@@ -44,3 +54,4 @@
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
+
