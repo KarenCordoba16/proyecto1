@@ -22,7 +22,22 @@
 <!-- Esta es una directiva de estructura -->
 </ion-content>
 
-
+<ion-content>
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+      <th>Estado</th>
+    </tr>  
+    <tr *ngFor="let persona of personas" [ngStyle]="{'color': persona.estado === 'activo' ? 'green' : 'red'}">
+      <td>{{persona.nombre}} </td>
+      <td>{{persona.apellido}} </td>
+      <td>{{persona.edad}} años </td>
+      <td>{{persona.estado}}</td>
+    </tr>   
+  </table>
+</ion-content>
 
 <ion-tabs>
   <!-- Tab bar -->
@@ -48,10 +63,6 @@
       <ion-label [routerLink]="['/piedra']">Piedra</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="about">
-      <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
-      <ion-label [routerLink]="['/computadora']">Computadora</ion-label>
-    </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
 
