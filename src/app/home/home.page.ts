@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+function agregarElemento(lista: string[], nuevoElemento: string) {
+  lista.push(nuevoElemento);
+}
+
+
 interface Persona {
   nombre: string;
   apellido: string;
@@ -13,7 +18,12 @@ interface Persona {
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  lista = ["elemento 1", "elemento 2", "elemento 3", "elemento 4", "elemento 5"];
+  nuevoElemento: string = "nuevo elemento";
+
+
   condicion: boolean = true;
+
   personas: Persona[] = [
   {
     nombre: "Nicolás",
@@ -43,8 +53,8 @@ export class HomePage implements OnInit {
         estado: "inactivo",
       },
     ];
+    agregarElemento(this.lista, this.nuevoElemento)
   }
-
 }
 
 

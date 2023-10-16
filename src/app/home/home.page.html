@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" id="contenido">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Home</ion-title>
@@ -20,28 +20,108 @@
 <div *ngIf="condicion; else bloqueElse">El contenido de este div se muestra cuando 'condicion' se cumple.</div>
 <ng-template #bloqueElse>Este contenido se muestra cuando 'condicion' es false.</ng-template>
 <!-- Esta es una directiva de estructura -->
-</ion-content>
 
-<ion-content>
-  <table>
-    <tr>
+  <br>
+  <table border="black">
+    <tr align="center">
       <th>Nombre</th>
       <th>Apellido</th>
       <th>Edad</th>
       <th>Estado</th>
     </tr>  
-    <tr *ngFor="let persona of personas" [ngStyle]="{'color': persona.estado === 'activo' ? 'green' : 'red'}">
+    <tr *ngFor="let persona of personas" [ngStyle]="{'color': persona.estado === 'activo' ? 'green' : 'red'}" align="center">
       <td>{{persona.nombre}} </td>
       <td>{{persona.apellido}} </td>
       <td>{{persona.edad}} años </td>
       <td>{{persona.estado}}</td>
     </tr>   
   </table>
-</ion-content>
+  <br>
 
-<ion-tabs>
+  <br>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Formulario de Datos Personales
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form action="home.page.ts" method="post">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" name="nombre" id="nom-nuevo" required placeholder="Nombre" pattern="[A-Z/a-z]"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input type="text" name="apellido" id="ape-nuevo" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" name="edad" id="edad-nva" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Estado</ion-label>
+        <ion-input type="text" name="estado" id="est-nuevo" required placeholder="activo/inactivo"></ion-input>
+      </ion-item>
+
+      <div class="button-container">
+        <!-- <button ion-button type="submit" [disabled]="!personas.Formulario.valid">Enviar</button> -->
+        <ion-button type="submit" id="button-guardar">Guardar</ion-button>
+      </div>
+    </form>
+  
+    <table *ngIf="personas.length > 0">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let personalData of personas">
+          <td>{{ personalData.nombre }}</td>
+          <td>{{ personalData.apellido }}</td>
+          <td>{{ personalData.edad }}</td>
+          <td>{{ personalData.estado}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </ion-content>
+  
+  
+
+  <ion-title>Lista</ion-title>
+    <ion-list>
+      <ion-item *ngFor="let list of lista">
+        <ion-label>*{{list}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+  <script >
+  function agregarElemento() {
+    let li = document.createElement("li");
+    let texto = document.createTextNode("Elemento nuevo");
+    li.appendChild(texto);
+    document.getElementById("miLista").appendChild(li);
+    const registerButton = document.getElementById("register-button");
+    registerButton.addEventListener("click", () => {
+  // Aquí va el código que se ejecutará cuando se haga clic en el botón de registro.
+  });
+  }
+  </script>
+
+
+<!-- <ion-tabs> -->
   <!-- Tab bar -->
-  <ion-tab-bar slot="bottom">
+  <!-- <ion-tab-bar slot="bottom">
     
     <ion-tab-button tab="schedule">
       <ion-icon name="calendar" aria-hidden="true"></ion-icon>
@@ -61,8 +141,8 @@
     <ion-tab-button class="about">
       <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
       <ion-label [routerLink]="['/piedra']">Piedra</ion-label>
-    </ion-tab-button>
+    </ion-tab-button> -->
 
-  </ion-tab-bar>
-</ion-tabs>
+  <!-- </ion-tab-bar>
+</ion-tabs> -->
 
