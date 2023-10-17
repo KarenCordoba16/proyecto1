@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface Persona {
   nombre: string;
@@ -13,46 +13,40 @@ interface Persona {
   styleUrls: ['./home.page.scss'],
 })
 
-export class HomePage implements OnInit {
-  constructor() { }
-  condicion: boolean = true;
-  items = ['Elemento 1', 'Elemento 2', 'Elemento 3'];
+export class HomePage {
 
-  addItem() {
-    this.items.push('Nuevo elemento');
-  }
-  
+  condicion: boolean = true;
   person: Persona[] = [
-  {
-    nombre: "Nicolás",
-    apellido: "Pérez",
-    edad: 25,
-    estado: "activo",
-  },
-  {
-    nombre: "Julieta",
-    apellido: "González",
-    edad: 30,
-    estado: "inactivo",
-  },
-];
-  ngOnInit(): void {
-    this.person = [
-      {
-        nombre: "Nicolás",
-        apellido: "Pérez",
-        edad: 25,
-        estado: "activo",
-      },
-      {
-        nombre: "Julieta",
-        apellido: "González",
-        edad: 30,
-        estado: "inactivo",
-      },
-    ];
+    {
+      nombre: "Nicolás",
+      apellido: "Guzmán",
+      edad: 25,
+      estado: "inactivo",
+    },
+    {
+      nombre: "Julieta",
+      apellido: "González",
+      edad: 18,
+      estado: "activo",
+    }
+  ];
+
+  personaAgregar: Persona = {
+    nombre: '',
+    apellido: '',
+    edad : 0,
+    estado: ''
+  };
+
+  agregarPersonas() {
+    if (this.personaAgregar.nombre && this.personaAgregar.apellido && this.personaAgregar.edad > 0) {
+      this.person.push(this.personaAgregar);
+      this.personaAgregar = {
+        nombre: '',
+        apellido: '',
+        edad : 0,
+        estado:'inactivo'
+      };
+    }
   }
 }
-
-
-

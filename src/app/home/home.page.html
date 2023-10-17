@@ -22,6 +22,8 @@
 <!-- Esta es una directiva de estructura -->
 
   <br>
+  <ion-title>Personas</ion-title>
+  <br>
   <table border="black">
     <tr align="center">
       <th>Nombre</th>
@@ -38,14 +40,26 @@
   </table>
   <br>
   <br>
-  <ion-list class="lista">
-    <ion-title>Lista</ion-title>
-    <ion-item *ngFor="let item of items">
-      {{ item }}
+  <ion-card class="card">
+    <ion-title>Añadir a la lista Personas</ion-title>
+    <ion-item>
+      <ion-input label="Nombre" [(ngModel)]="personaAgregar.nombre" type="texto"></ion-input>
     </ion-item>
-  </ion-list>
+    <ion-item>
+      <ion-input label="Apellido" [(ngModel)]="personaAgregar.apellido" type="texto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Edad" [(ngModel)]="personaAgregar.edad" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Estado" [(ngModel)]="personaAgregar.estado"></ion-input>
+      <ion-select-option value="inactivo">inactivo</ion-select-option>
+      <ion-select-option value="activo">activo</ion-select-option>
+    </ion-item>
+    <ion-button (click)="agregarPersonas()">Añadir persona</ion-button>
+  </ion-card>
   
-  <ion-button (click)="addItem()">Agregar</ion-button>
+  
   
 <!-- <ion-tabs> -->
   <!-- Tab bar -->
