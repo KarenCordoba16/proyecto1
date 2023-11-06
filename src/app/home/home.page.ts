@@ -1,4 +1,4 @@
-import { Component, booleanAttribute } from '@angular/core';
+import { Component } from '@angular/core';
 
 // Desarrolle en TypeScript las siguientes funciones:
 // Devolver  un saludo "Buenas tardes" concatenado a un nombre (string) 
@@ -9,8 +9,8 @@ function saludarPorLaTarde(nombre: string): string {
   return mensaje;
 }
 
-const nombre = "Karen";
-const saludo = saludarPorLaTarde(nombre);
+// const nombre = "Karen";
+const saludo = saludarPorLaTarde("Karen");
 console.log(saludo);
 // --------------------------------------------------------------------
 // La multiplicacion de dos numeros
@@ -19,9 +19,9 @@ function multiplicarNumeros(numero: number, numero2: number) {
   return resultado
 }
 
-let num1 = 5;
-let num2 = 7;
-const multiplicar = multiplicarNumeros(num1, num2);
+// let num1 = 5;
+// let num2 = 7;
+const multiplicar = multiplicarNumeros(4,2);
 console.log("El resultado de la multipliación es: ",multiplicar)
 // --------------------------------------------------------------------
 // La suma de 3 numeros
@@ -31,10 +31,10 @@ function sumarNumeros(numero: number, numero2: number, numero3: number) {
   return resultado
 }
 
-let nro1 = 5;
-let nro2 = 7;
-let nro3 = 10;
-const sumar = sumarNumeros(nro1, nro2, nro3);
+// let nro1 = 5;
+// let nro2 = 7;
+// let nro3 = 10;
+const sumar = sumarNumeros(1, 2, 3);
 console.log("El resultado de la suma es: ",sumar)
 // ------------------------------------------------------------------------
 // Dado un parametro "number" evalue si este es mayor a 18 y lo retorne
@@ -43,13 +43,14 @@ function esMayor(edad: number): boolean {
   return edad >= 18;
 }
 
-let num = 17;
-const mayor = esMayor(num);
+// let num = 17;
+const mayor = esMayor(17);
 console.log("Es mayor?: ",mayor)
 // -----------------------------------------------------------
 // Desarrolle en TypeScript los siguientes procedimientos:
 // Un procedimiento que recorra una lista de Personas y que imprima por consola por cada nombre 
 // "Buenas tardes" + valor del nombre.
+
 interface Personas {
   nombres: string;
 }
