@@ -15,13 +15,14 @@
     <tr *ngFor="let elemento of [1,2,3,4,5]">
       <td [ngStyle]="{'background-color':elemento%2==0?'red':'yellow'}">{{elemento}}</td>
     </tr>
+    <div *ngFor="let number of [1,2,3,4]"><p>Numero: {{number}}</p></div>
   </table>
 <!-- Esta es una directiva de atributo en html -->
-<div *ngIf="condicion; else bloqueElse">El contenido de este div se muestra cuando 'condicion' se cumple.</div>
-<ng-template #bloqueElse>Este contenido se muestra cuando 'condicion' es false.</ng-template>
+<!-- <div *ngIf="condicion; else bloqueElse">El contenido de este div se muestra cuando 'condicion' se cumple.</div>
+<ng-template #bloqueElse>Este contenido se muestra cuando 'condicion' es false.</ng-template> -->
 <!-- Esta es una directiva de estructura -->
 
-  <br>
+  <!-- <br>
   <table border="black">
     <tr align="center">
       <th>Nombre</th>
@@ -35,7 +36,7 @@
       <td>{{persona.edad}} años </td>
       <td>{{persona.estado}}</td>
     </tr>   
-  </table>
+  </table> -->
   <br>
 
   <br>
@@ -75,7 +76,7 @@
       </div>
     </form>
   
-    <table *ngIf="personas.length > 0">
+    <!-- <table *ngIf="personas.length > 0">
       <thead>
         <tr>
           <th>Nombre</th>
@@ -94,11 +95,11 @@
       </tbody>
     </table>
   
-  </ion-content>
+  </ion-content> -->
   
   
 
-  <ion-title>Lista</ion-title>
+  <!-- <ion-title>Lista</ion-title>
     <ion-list>
       <ion-item *ngFor="let list of lista">
         <ion-label>*{{list}}</ion-label>
@@ -116,7 +117,7 @@
   // Aquí va el código que se ejecutará cuando se haga clic en el botón de registro.
   });
   }
-  </script>
+  </script> -->
 
 
 <!-- <ion-tabs> -->
@@ -146,3 +147,15 @@
   <!-- </ion-tab-bar>
 </ion-tabs> -->
 
+<ion-content>
+  <table>
+    <div *ngFor="let palabra of array">Array: {{palabra}}</div>
+  </table>
+  <div>
+    <h2>Ejemplo de ngIf</h2>
+    <p *ngIf="mostrarElemento">Este elemento se muestra si mostrarElemento es verdadero.</p>
+    <p *ngIf="!mostrarElemento">Este elemento se muestra si mostrarElemento es falso.</p>
+    <button (click)="toogleMostrarElemento()">Alternar Elemento</button>
+  </div>
+  
+</ion-content>
